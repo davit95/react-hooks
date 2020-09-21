@@ -2,11 +2,11 @@ import React from "react";
 import {useAlert} from "../../context/AlertContext";
 
 export default function Alert() {
-    const { alert } = useAlert();
+    const alert = useAlert();
 
-    if (!alert) return null;
+    if (!alert.visible) return null;
 
     return (
-        <p>alert</p>
+        <p onClick={alert.hide}>{alert.text}</p>
     )
 }

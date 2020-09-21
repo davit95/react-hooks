@@ -2,11 +2,11 @@ import React from "react";
 import {useAlert} from "../../context/AlertContext";
 
 export default function Index() {
-    const { toggle } = useAlert();
+    const { show, hide } = useAlert();
     return (
         <>
             <h1>Context</h1>
-            <button onClick={toggle}>show alert</button>
+            <button onClick={() => show('text from show')}>show alert</button>
         </>
     )
 }

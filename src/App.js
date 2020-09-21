@@ -9,7 +9,7 @@ import {AlertProvider} from "./context/AlertContext";
 function App() {
     return (
         <AlertProvider>
-            <UseContext toggle={() => {}} />
+            <UseContext />
             <Alert />
         </AlertProvider>
     )
