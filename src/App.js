@@ -7,11 +7,12 @@ import './index.css';
 // import UseContext from './components/UseContext';
 // import Alert from "./components/UseContext/Alert";
 // import {AlertProvider} from "./context/AlertContext";
-import Main from './components/Main';
+// import Main from './components/Main';
+import Form from './components/Form';
 
 function App() {
     return (
-        <Main />
+        <Form />
     )
 }
 
