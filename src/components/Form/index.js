@@ -3,11 +3,6 @@ import {Input, Divider, Button} from "antd";
 import useForm from "../../customHooks/useForm";
 
 export default function Index() {
-    const [err, setErr] = useState([])
-    const handleFormSubmit = () => {
-        console.log(state)
-    }
-
     const validators = [
         { field : 'email', rules : ['required', 'email'] },
         { field : 'name', rules : ['required'] },
@@ -23,10 +18,7 @@ export default function Index() {
                     JSON.stringify(errors)
                 }
             </pre>
-            {
-                errors.map((err, i) => <p key={i}>{err.name}</p>)
-            }
-            <form validators={validators} style={{ width: '400px' }} >
+            <form style={{ width: '400px' }} >
                 <label htmlFor="email">Email</label>
                 <Input type="text" name="email" id="email" value={state.email} onChange={handleInputChange} />
                 <Divider />
@@ -36,7 +28,7 @@ export default function Index() {
                 <label htmlFor="password">Password</label>
                 <Input type="text" name="password" id="password" value={state.password} onChange={handleInputChange} />
                 <Divider />
-                <Button onClick={handleFormSubmit}>Submit</Button>
+                <Button>Submit</Button>
             </form>
         </>
     );
