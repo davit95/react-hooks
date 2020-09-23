@@ -10,18 +10,19 @@ export default function useForm(validators) {
 
     const handleInputChange = (evt) => {
         const { name, value } = evt.target;
+        let errorsArray = [];
         const validator = validators.find(item => item.field === name)
         if (validator) {
             if (validator.rules.includes('required')) {
                 if (value.length === 0) {
-                    errors[name] = `The ${name} field is required`
+                    errorsArray = [...errorsArray, { name : name, message: `The ${name} field is required`}]
                 }
             }
             // if (validator.rules.includes('email')) {
             //     errors[name] = `The ${name} must be type of email`
             // }
         }
-        setErrors(errors)
+        setErrors(errorsArray)
         setState({
             ...state,
             [name]: value

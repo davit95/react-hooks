@@ -16,11 +16,15 @@ export default function Index() {
 
     const { handleInputChange, state, errors } = useForm(validators);
 
-
     return (
         <>
+            <pre>
+                {
+                    JSON.stringify(errors)
+                }
+            </pre>
             {
-                errors.map(e => <p>{e.email}</p>)
+                errors.map((err, i) => <p key={i}>{err.name}</p>)
             }
             <form validators={validators} style={{ width: '400px' }} >
                 <label htmlFor="email">Email</label>
